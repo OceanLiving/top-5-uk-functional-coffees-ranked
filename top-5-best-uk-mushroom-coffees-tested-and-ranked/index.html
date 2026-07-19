@@ -78,7 +78,7 @@ ul.checks li::before{content:"●";position:absolute;left:0;top:6px;color:var(--
 .media{border-radius:13px;margin:12px}
 .card.winner{background:var(--cream);border:2px solid var(--gold-dark)}
 .win-pill{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-family:'Poppins',sans-serif;font-weight:700;font-size:12.5px;background:var(--gold);color:#1c1c1e;padding:6px 18px;border-radius:20px;box-shadow:0 2px 0 var(--gold-dark);white-space:nowrap;z-index:10;max-width:88%;box-sizing:border-box;text-align:center}
-.media{position:relative;aspect-ratio:1/1;width:100%;background:#faf9f4;overflow:hidden;opacity:0;transform:translateY(10px);transition:all .5s ease;align-self:center}
+.media{position:relative;aspect-ratio:1/1;width:calc(100% - 24px);background:#faf9f4;overflow:hidden;opacity:0;transform:translateY(10px);transition:all .5s ease;align-self:center}
 .media.in{opacity:1;transform:none}
 .media img.prod{width:100%;height:100%;object-fit:cover;display:block}
 .stamp{position:absolute;top:4%;right:4%;width:22%;max-width:78px;min-width:52px;height:auto;aspect-ratio:1/1;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);padding:1px}
@@ -496,7 +496,7 @@ const scoreIO = new IntersectionObserver((entries)=>{
     if(e.isIntersecting){
       const el = e.target;
       const target = parseInt(el.dataset.target,10);
-      const dur = 900; const start = performance.now();
+      const dur = 2200; const start = performance.now();
       function step(now){
         const p = Math.min((now-start)/dur,1);
         el.textContent = Math.round(target * (1 - Math.pow(1-p,3)));
