@@ -24,7 +24,7 @@ fbq('init','454889613638343');fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=454889613638343&ev=PageView&noscript=1"/></noscript>
 <style>
 :root{
-  --ink:#1c1c1e;--body:#3a3a3d;--muted:#6b6b70;
+  --ink:#1c1c1e;--body:#333333;--muted:#57534d;
   --gold:#f2b23c;--gold-dark:#d99a1f;
   --green:#14532d;--green-mid:#1a6b3a;--green-bg:#eafaf0;--green-border:#a8e6bd;
   --red:#d1453b;--red-bg:#fdeeed;--red-border:#f3c3bf;
@@ -65,11 +65,7 @@ ul.checks li{padding:4px 0 4px 22px;position:relative}
 ul.checks li::before{content:"●";position:absolute;left:0;top:6px;color:var(--red);font-size:8px}
 
 /* testing / reasons grid */
-.grid-boxes{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:20px 0 8px}
-.box{flex:1 1 250px;max-width:270px;border:1.5px solid var(--orange);border-radius:10px;padding:16px 18px;background:#fff}
-.box.plain{border-color:var(--line)}
-.box h4{font-family:'Poppins',sans-serif;font-size:15px;color:var(--ink);margin-bottom:6px}
-.box p{font-size:13.5px;color:var(--muted);margin:0}
+/* (superseded by refined rules below) */
 
 /* results section header */
 .results-head{text-align:center;margin:44px 0 26px}
@@ -84,7 +80,17 @@ ul.checks li::before{content:"●";position:absolute;left:0;top:6px;color:var(--
 .media{position:relative;aspect-ratio:1/1;width:100%;background:#faf9f4;overflow:hidden;opacity:0;transform:translateY(10px);transition:all .5s ease}
 .media.in{opacity:1;transform:none}
 .media img.prod{width:100%;height:100%;object-fit:cover;display:block}
-.stamp{position:absolute;top:12px;right:12px;width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.2);padding:3px}
+.stamp{position:absolute;top:14px;right:14px;width:104px;height:104px;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);padding:5px}
+
+/* section panel wrapper — light grey card containing intro + box grid */
+.section-panel{background:#f7f6f1;border:1px solid var(--line);border-radius:16px;padding:28px 30px 26px;margin:22px 0}
+.section-panel h2.sec{margin-top:0}
+.section-panel > p{color:#4a4640;font-size:15px}
+.grid-boxes{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:22px 0 10px}
+.box{flex:1 1 250px;max-width:280px;border:1px solid #ecdcc8;border-radius:12px;padding:20px 20px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.box.plain{border-color:#e2ddd0}
+.box h4{font-family:'Poppins',sans-serif;font-size:15.5px;color:var(--ink);margin-bottom:7px;line-height:1.3}
+.box p{font-size:14px;color:#57534d;margin:0;line-height:1.5}
 .score-box{position:absolute;bottom:12px;left:12px;background:var(--green);color:#fff;border-radius:8px;padding:8px 14px;text-align:center;font-family:'Poppins',sans-serif;box-shadow:0 3px 8px rgba(0,0,0,.25)}
 .score-box .lbl{font-size:9px;letter-spacing:.08em;opacity:.85}
 .score-box .num{font-size:22px;font-weight:700;line-height:1.1}
@@ -196,6 +202,7 @@ footer a{color:#cfcfd2}
 <li>Freshly roasted coffee — not instant powders, for true coffee flavour</li>
 </ul>
 
+<div class="section-panel">
 <h2 class="sec">How We Tested the UK's Most Popular Mushroom Coffees</h2>
 <p>To cut through the hype, our team put 12 mushroom coffee brands through a structured review process. Each product was assessed across five key areas:</p>
 <div class="grid-boxes">
@@ -206,6 +213,7 @@ footer a{color:#cfcfd2}
   <div class="box"><h4>Value for Money</h4><p>Cost per serving versus ingredient potency.</p></div>
 </div>
 <p>We tested each brand with a panel of professionals, athletes, and coffee lovers to see which products genuinely improved daily routines. Only five earned a place on our final list.</p>
+</div>
 
 <div class="results-head" id="results">
   <h2>The Results: UK's Top 5 Mushroom Coffees</h2>
@@ -420,6 +428,7 @@ footer a{color:#cfcfd2}
   </div>
 </div>
 
+<div class="section-panel">
 <h2 class="sec">🔎 Why Our Team Chose myco:soul as the #1 Pick</h2>
 <p>After testing 12 mushroom coffee brands in the UK, we kept coming back to myco:soul. Here are the six reasons it earned the top spot on our list:</p>
 <div class="grid-boxes">
@@ -431,6 +440,7 @@ footer a{color:#cfcfd2}
   <div class="box plain"><h4>Performance Coffee Positioning</h4><p>Engineered for focus, clarity, and steady energy — built for high performers.</p></div>
 </div>
 <div class="verdict">✅ <b>Final Word:</b> Other brands bring convenience, flavours, or lifestyle appeal. But if you want a mushroom coffee built to clinical-strength standards with full transparency, myco:soul is in a category of its own.</div>
+</div>
 
 <h2 class="sec">📊 At-a-Glance Comparison: UK's Top 5 Mushroom Coffees</h2>
 <div class="compare-wrap">
