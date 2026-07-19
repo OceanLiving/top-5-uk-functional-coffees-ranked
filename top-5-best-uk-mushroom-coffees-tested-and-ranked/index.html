@@ -78,7 +78,7 @@ ul.checks li::before{content:"●";position:absolute;left:0;top:6px;color:var(--
 .media{border-radius:13px;margin:12px}
 .card.winner{background:var(--cream);border:2px solid var(--gold-dark)}
 .win-pill{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-family:'Poppins',sans-serif;font-weight:700;font-size:12.5px;background:var(--gold);color:#1c1c1e;padding:6px 18px;border-radius:20px;box-shadow:0 2px 0 var(--gold-dark);white-space:nowrap;z-index:10;max-width:88%;box-sizing:border-box;text-align:center}
-.media{position:relative;aspect-ratio:1/1;width:calc(100% - 24px);background:#faf9f4;overflow:hidden;opacity:0;transform:translateY(10px);transition:all .5s ease;align-self:center}
+.media{position:relative;aspect-ratio:1/1;width:auto;background:#faf9f4;overflow:hidden;opacity:0;transform:translateY(10px);transition:all .5s ease;align-self:center}
 .media.in{opacity:1;transform:none}
 .media img.prod{width:100%;height:100%;object-fit:cover;display:block}
 .stamp{position:absolute;top:4%;right:4%;width:22%;max-width:78px;min-width:52px;height:auto;aspect-ratio:1/1;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);padding:1px}
@@ -87,11 +87,12 @@ ul.checks li::before{content:"●";position:absolute;left:0;top:6px;color:var(--
 .section-panel{background:#f7f6f1;border:1px solid var(--line);border-radius:16px;padding:28px 30px 26px;margin:22px 0}
 .section-panel h2.sec{margin-top:0}
 .section-panel > p{color:#4a4640;font-size:15px}
-.grid-boxes{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:22px 0 10px}
-.box{flex:1 1 250px;max-width:280px;border:1px solid #ecdcc8;border-radius:12px;padding:20px 20px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.grid-boxes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 10px}
+.box{border:1px solid #ecdcc8;border-radius:12px;padding:14px 15px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .box.plain{border-color:#e2ddd0}
-.box h4{font-family:'Poppins',sans-serif;font-size:15.5px;color:var(--ink);margin-bottom:7px;line-height:1.3}
-.box p{font-size:14px;color:#57534d;margin:0;line-height:1.5}
+.box h4{font-family:'Poppins',sans-serif;font-size:14px;color:var(--ink);margin-bottom:5px;line-height:1.3}
+.box p{font-size:13px;color:#57534d;margin:0;line-height:1.45}
+@media(min-width:700px){.grid-boxes{grid-template-columns:1fr 1fr 1fr}.box h4{font-size:15.5px}.box p{font-size:14px}}
 .score-box{position:absolute;bottom:12px;left:12px;background:var(--green);color:#fff;border-radius:8px;padding:8px 14px;text-align:center;font-family:'Poppins',sans-serif;box-shadow:0 3px 8px rgba(0,0,0,.25)}
 .score-box .lbl{font-size:9px;letter-spacing:.08em;opacity:.85}
 .score-box .num{font-size:22px;font-weight:700;line-height:1.1}
@@ -496,7 +497,7 @@ const scoreIO = new IntersectionObserver((entries)=>{
     if(e.isIntersecting){
       const el = e.target;
       const target = parseInt(el.dataset.target,10);
-      const dur = 2200; const start = performance.now();
+      const dur = 900; const start = performance.now();
       function step(now){
         const p = Math.min((now-start)/dur,1);
         el.textContent = Math.round(target * (1 - Math.pow(1-p,3)));
