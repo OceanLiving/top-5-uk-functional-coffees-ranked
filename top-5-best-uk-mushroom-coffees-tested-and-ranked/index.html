@@ -510,5 +510,28 @@ const scoreIO = new IntersectionObserver((entries)=>{
 },{threshold:.4});
 document.querySelectorAll('.score-box .num').forEach(el=>scoreIO.observe(el));
 </script>
+<script>
+(function() {
+  // Forward Meta click id + UTMs from this page's URL onto mycosoul.com links.
+  // Option B: incoming Meta utm_* OVERRIDE the hardcoded ncr/top5ranked tags.
+  // Organic visits (no Meta params) keep the hardcoded tags untouched.
+  var incoming = new URLSearchParams(window.location.search);
+  var keys = ['fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var toForward = [];
+  keys.forEach(function(k) {
+    var v = incoming.get(k);
+    if (v) toForward.push([k, v]);
+  });
+  if (!toForward.length) return;
+  document.querySelectorAll('a[href*="mycosoul.com"]').forEach(function(a) {
+    try {
+      var url = new URL(a.href);
+      toForward.forEach(function(pair) { url.searchParams.set(pair[0], pair[1]); });
+      a.href = url.toString();
+    } catch(e) {}
+  });
+})();
+</script>
+
 </body>
 </html>
